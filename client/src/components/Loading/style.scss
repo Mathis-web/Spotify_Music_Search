@@ -1,0 +1,16 @@
+.loading {
+    font-size: 3rem;
+    color: #bbb;
+    margin: 3rem 0;
+    text-align: center;
+    animation: fadeIn 0.8s linear infinite alternate-reverse;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -6,35 +6,6 @@
         font-size: 3rem;
         font-weight: 600;
         padding: v.$gutter * 2;
-    }
-
-    &__input-container {
-        display: flex;
-        align-items: center;
-        border: 1px solid v.$blackColor;
-        border-radius: 440px;
-        background-color: v.$darkgreyColor;
-        width: 100%;
-        padding-left: v.$gutter;
-
-        & img {
-            height: 30px;
-        }
-    }
-
-    &__search-input {
-        color: white;
-        font-size: 1.1rem;
-        margin-left: 1rem;
-        font-family: 'Helvetica Neue', sans-serif;
-        background-color: v.$darkgreyColor;
-        border: none;
-        width: calc(100% - 5rem);
-        padding: v.$gutter 0;
-
-        &:focus-visible {
-            outline: none;
-        }
-        &::placeholder{color: white}
+        text-align: center;
     }
 }
