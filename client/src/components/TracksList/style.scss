@@ -28,3 +28,14 @@
         }
     }
 }
+
+@media all and (max-width: 700px) {
+    .tracks-list {
+        padding: 2rem 0 7rem 0;
+        font-size: 14px;
+        &__track {
+            padding: v.$gutter * 0.5;
+            margin: v.$gutter * 0.5 0;
+        }
+    }
+}

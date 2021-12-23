@@ -29,3 +29,10 @@
         &::placeholder{color: white}
     }
 }
+
+@media all and (max-width: 700px) {
+    .search-bar {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
