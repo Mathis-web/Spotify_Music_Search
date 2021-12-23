@@ -2,6 +2,7 @@ import './style.scss';
 import useAuth from '../../hooks/useAuth';
 import Header from '../Header';
 import Loading from '../Loading';
+import TracksList from '../TracksList';
 
 import { useState, useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -17,6 +18,7 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const [results, setResults] = useState([]);
+  const [error, setError] = useState('');
 
   const onChangeInput = (value) => setSearchInput(value);
 
@@ -33,9 +35,11 @@ function App() {
     timeout.current = setTimeout(() => {
       spotifyApi.searchTracks(searchInput)
       .then((data) => {
-        console.log(data);
+        setResults(data.body.tracks.items);
       })
-      .catch(err => console.dir(err));
+      .catch(err => {
+        setError('Une erreur est survenue. Veuillez relancer l\'application.');
+      });
     }, 500);
   }, [searchInput])
 
@@ -43,8 +47,12 @@ function App() {
 
   return (
     <div className="app">
-    <Header value={searchInput} onChangeInput={onChangeInput} />
-     
+      <Routes>
+        <Route path="/" element={
+          <Header value={searchInput} onChangeInput={onChangeInput} error={error} />
+        } />
+      </Routes>
+
     </div>
   );
 }

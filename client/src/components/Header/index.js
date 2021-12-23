@@ -1,7 +1,8 @@
 import './style.scss';
 import loupe from '../../assets/loupe.png';
+import Error from '../Error';
 
-const Header = function({value, onChangeInput}) {
+const Header = function({value, onChangeInput, error}) {
     return (
         <header className="header">
             <h1 className="header__title">Spotify Music Search</h1>
@@ -16,6 +17,7 @@ const Header = function({value, onChangeInput}) {
                     onChange={(e) => onChangeInput(e.target.value)} 
                 />
             </div>
+            {error && <Error content={error} />}
         </header>
     );
 }
