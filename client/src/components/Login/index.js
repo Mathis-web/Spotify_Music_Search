@@ -5,7 +5,7 @@ function Login() {
     const authURL = new URLSearchParams({
         response_type: "code",
         client_id: process.env.REACT_APP_CLIENT_ID,
-        scope: "streaming user-read-email user-read-private",
+        scope: "streaming user-read-email user-read-private user-read-playback-state user-modify-playback-state user-library-read user-library-modify",
         redirect_uri: "http://localhost:3000",
         state: generateRandomString(16)
     })

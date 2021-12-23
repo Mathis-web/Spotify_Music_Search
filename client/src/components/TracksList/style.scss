@@ -1,7 +1,7 @@
 @use '../../styles/vars' as v;
 
 .tracks-list {
-    padding: v.$gutter * 2;
+    padding: v.$gutter * 2 v.$gutter * 2 v.$gutter * 7 v.$gutter * 2;
 
     &__track {
         background-color: v.$lightblackColor;

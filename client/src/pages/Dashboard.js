@@ -6,6 +6,7 @@ import Loading from '../components/Loading';
 import Error from '../components/Error';
 import SearchBar from '../components/SearchBar';
 import TracksList from '../components/TracksList';
+import Player from '../components/Player'
 
 function Dashboard({ code }) {
 
@@ -17,8 +18,10 @@ function Dashboard({ code }) {
   const [isLoading, setIsLoading] = useState(true);
   const [results, setResults] = useState([]);
   const [error, setError] = useState('');
+  const [currentTrackURI, setCurrentTrackURI] = useState(null);
 
   const onChangeInput = (value) => setSearchInput(value);
+  const onClickTrack = (trackURI) => setCurrentTrackURI(trackURI);
 
   useEffect(() => {
     if(!accessToken) return;
@@ -47,10 +50,19 @@ function Dashboard({ code }) {
         <>
             <SearchBar value={searchInput} onChangeInput={onChangeInput} />
             {results.length > 0 
-                ? <TracksList tracks={results} />
+                ? <TracksList tracks={results} onClickTrack={onClickTrack}/>
                 : <p className="home__text" style={{color: 'white', textAlign: 'center', marginTop: '1rem'}}>Aucun résultat pour votre recherche.</p>
             }
             {error && <Error content={error} />}
+            {results.length > 0
+              ? <Player
+                accessToken={accessToken}
+                currentTrackURI={currentTrackURI} 
+                tracks={results}
+              />
+              : <div></div>
+            }
+            
         </>
     );
 }
