@@ -1,0 +1,30 @@
+@use '../../styles/vars' as v;
+
+.tracks-list {
+    padding: v.$gutter * 2;
+
+    &__track {
+        background-color: v.$lightblackColor;
+        display: flex;
+        padding: v.$gutter;
+        margin: v.$gutter 0;
+        cursor: pointer;
+
+        &:hover &__content &__content__name {
+            text-decoration: underline;
+        }
+        
+        &__content {
+            margin: auto 1rem;
+
+            &__name {
+                margin-bottom: 0.5rem;
+                color: v.$lightColor;
+            }
+
+            &__artists {
+                color: grey;
+            }
+        }
+    }
+}

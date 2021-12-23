@@ -1,8 +1,7 @@
 import './style.scss';
 import useAuth from '../../hooks/useAuth';
-import Header from '../Header';
+import Home from '../../pages/Home';
 import Loading from '../Loading';
-import TracksList from '../TracksList';
 
 import { useState, useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -49,7 +48,7 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={
-          <Header value={searchInput} onChangeInput={onChangeInput} error={error} />
+          <Home value={searchInput} onChangeInput={onChangeInput} error={error} tracks={results} />
         } />
       </Routes>
 

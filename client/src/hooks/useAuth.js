@@ -13,7 +13,8 @@ export default function useAuth() {
               setAccessToken(result.data.accessToken);
               setExpiresIn(result.data.expiresIn);
             } catch (error) {
-              console.log(error.errorMessage);
+              if(error.errorMessage) console.log(error.errorMessage);
+              else console.log(error.message);
             }
           };
           getAccessToken();

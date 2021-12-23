@@ -12,7 +12,7 @@ const Header = function({value, onChangeInput, error}) {
                     type="text" 
                     name="search" 
                     className="header__search-input" 
-                    placeholder="Chercher un morceau / artiste / album"
+                    placeholder="Chercher un morceau / artiste"
                     value={value} 
                     onChange={(e) => onChangeInput(e.target.value)} 
                 />
