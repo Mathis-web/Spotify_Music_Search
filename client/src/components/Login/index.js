@@ -6,7 +6,7 @@ function Login() {
         response_type: "code",
         client_id: process.env.REACT_APP_CLIENT_ID,
         scope: "streaming user-read-email user-read-private user-read-playback-state user-modify-playback-state user-library-read user-library-modify",
-        redirect_uri: "http://localhost:3000",
+        redirect_uri: process.env.REACT_APP_REDIRECT_URI,
         state: generateRandomString(16)
     })
 
