@@ -13,6 +13,7 @@ export default function useAuth(code) {
               setAccessToken(result.data.accessToken);
               setRefreshToken(result.data.refreshToken);
               setExpiresIn(result.data.expiresIn);
+              window.history.pushState({}, null, '/');
             } catch (error) {
               if(error.errorMessage) console.log(error.errorMessage);
               window.location = "/";
