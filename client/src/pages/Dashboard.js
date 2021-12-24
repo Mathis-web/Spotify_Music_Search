@@ -58,11 +58,11 @@ function Dashboard({ code }) {
                 : <p className="home__text" style={{color: 'white', textAlign: 'center', marginTop: '1rem'}}>Aucun résultat pour votre recherche.</p>
             }
             {error && <Error content={error} />}
-            {results.length > 0
+            {currentTrackURI
               ? <Player
-                accessToken={accessToken}
-                currentTrackURI={currentTrackURI} 
-                tracks={tracksURI}
+                  accessToken={accessToken}
+                  currentTrackURI={currentTrackURI} 
+                  tracks={tracksURI}
               />
               : <div></div>
             }

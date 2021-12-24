@@ -7,16 +7,9 @@ function Player({accessToken, currentTrackURI, tracks}) {
    const currentTrack = tracks.find((track) => (track.uri === currentTrackURI));
    const indexCurrentTrack = tracks.indexOf(currentTrack);
 
-   const [play, setPlay] = useState(false);
-
-  useEffect(() => setPlay(true), [currentTrackURI])
-
     return (
         <SpotifyPLayer 
-            play={play}
-            callback={state => {
-                if (!state.isPlaying) setPlay(false)
-            }}
+            autoPlay={true}
             token={accessToken}
             uris={tracks.length > 0 ? tracks.map(track => track.uri) : []}
             offset={indexCurrentTrack || 0}
