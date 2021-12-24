@@ -19,9 +19,13 @@ function Dashboard({ code }) {
   const [results, setResults] = useState([]);
   const [error, setError] = useState('');
   const [currentTrackURI, setCurrentTrackURI] = useState(null);
+  const [tracksURI, setTracksURI] = useState([]);
 
   const onChangeInput = (value) => setSearchInput(value);
-  const onClickTrack = (trackURI) => setCurrentTrackURI(trackURI);
+  const onClickTrack = (trackURI) => {
+    setCurrentTrackURI(trackURI);
+    setTracksURI(results);
+  };
 
   useEffect(() => {
     if(!accessToken) return;
@@ -58,7 +62,7 @@ function Dashboard({ code }) {
               ? <Player
                 accessToken={accessToken}
                 currentTrackURI={currentTrackURI} 
-                tracks={results}
+                tracks={tracksURI}
               />
               : <div></div>
             }

@@ -18,7 +18,7 @@ function Login() {
         margin: '2rem auto',
         borderRadius: '30px',
         padding: '1rem 2rem',
-        fontSize: '2rem',
+        fontSize: '1.5rem',
         textDecoration: 'none',
         textAlign: 'center'
     }

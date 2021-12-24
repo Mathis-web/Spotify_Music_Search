@@ -19,6 +19,11 @@ function App() {
   return (
     <div className="app">
       <Header />
+      {!isLoggedIn &&
+        <p style={{color: "lightgrey", lineHeight: '150%'}}>
+          En reliant votre compte spotify, vous pourrez chercher, écouter de la musique directement sur ce site et en ajouter dans votre playlist de titres likés.
+        </p>
+      }
       {codeAPI
         ? <Dashboard code={codeAPI} />
         : <Login />
