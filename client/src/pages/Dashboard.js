@@ -43,6 +43,7 @@ function Dashboard({ code }) {
         setResults(data.body.tracks.items);
       })
       .catch(err => {
+        console.log(err.message)
         setError('Une erreur est survenue. Veuillez relancer l\'application.');
       });
     }, 500);
