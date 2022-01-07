@@ -21,7 +21,7 @@ function Dashboard({ code }) {
   const onChangeInput = (value) => setSearchInput(value);
 
   useEffect(() => {
-    if(isLoading) return;
+    if(isLoading || !searchInput) return;
     const urlParams = new URLSearchParams(window.location.search);
     const searchParam = urlParams.get('search');
     spotifyApi.setAccessToken(accessToken);
