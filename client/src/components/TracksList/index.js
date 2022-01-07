@@ -1,7 +1,7 @@
 import './style.scss';
 import Track from './Track';
 
-function TracksList({tracks, onClickTrack}) {
+function TracksList({tracks}) {
 
     const smallestImage = (images) => {
         return images.reduce((acc, currentImg) => {
@@ -17,8 +17,8 @@ function TracksList({tracks, onClickTrack}) {
                     name: track.name,
                     artists: track.artists,
                     uri: track.uri,
+                    previewUrl: track.preview_url,
                     img: smallestImage(track.album.images),
-                    onClickTrack,
                 }
                 return (
                     <Track  {...trackObj} key={track.id}/>

@@ -8,6 +8,7 @@
         display: flex;
         padding: v.$gutter;
         margin: v.$gutter 0;
+        text-decoration: none;
         cursor: pointer;
 
         &:hover &__content &__content__name {
